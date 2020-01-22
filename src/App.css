@@ -1,0 +1,30 @@
+* {
+    box-sizing: border-box;
+    font-size: 20px;
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 50px;
+    font-weight: normal;
+    text-align: center;
+}
+
+p {
+    font-size: 20px;
+}
+
+label {
+    display: block;
+}
+
+section, .banner {    
+    width: 100%;
+    padding: 2%;
+}
+
+ul {
+    list-style: none;
+}

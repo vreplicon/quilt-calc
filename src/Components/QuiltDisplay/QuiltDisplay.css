@@ -1,0 +1,35 @@
+* {
+    box-sizing: border-box;
+}
+
+.quilt-display {
+    width: 80vw;
+    height: 70vh;
+    overflow-x: scroll;
+    overflow-y: scroll;
+    border: 4px black solid;
+}
+
+.border-block {
+    background-color: darkkhaki;
+}
+
+.border-row {
+    background-color: darkkhaki;
+}
+
+.quilt-row {
+    display: flex;
+}
+
+.quilt-container {
+    margin: 0 auto;
+    padding: 2% 0;
+}
+
+.striped-block {
+    width: 120px;
+    height: 60px;
+    background-image: url("stripeBlock.PNG");
+    background-size: 120px 60px;
+}

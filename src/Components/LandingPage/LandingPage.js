@@ -16,7 +16,7 @@ export default class LandingPage extends React.Component {
           </h2>
         </header>
 
-        <section className="text-block">
+        <section className="text-block grey-section">
           <header className="block-header">
             <h3>Select from premade patterns</h3>
             <p>Select from some classic quilt patterns</p>
@@ -26,7 +26,7 @@ export default class LandingPage extends React.Component {
 
         </section>
 
-        <section className="text-block">
+        <section className="text-block lightgrey-section">
           <header className="block-header">
             <h3>Customize the pattern to fit your vision</h3>
         <p>Resize, add borders, and change fabric arangments</p>
@@ -36,7 +36,7 @@ export default class LandingPage extends React.Component {
         </section>
 
 
-        <section className="text-block">
+        <section className="text-block grey-section">
           <header className="block-header">
             <h3>Find out what yardages you need</h3>
         <p>Get real time calculations of the amount of fabric you will need for your project</p>
@@ -48,7 +48,7 @@ export default class LandingPage extends React.Component {
 
 
 
-        <Link to="/home">
+        <Link to="/pattern-select">
           <button>
            Let's Get Quilting!
           </button>

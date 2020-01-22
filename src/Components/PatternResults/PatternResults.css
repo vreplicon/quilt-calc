@@ -1,0 +1,12 @@
+.results {
+    display: flex;
+    /* flex-direction: column; */
+    border: 4px black solid;
+    border-radius: 5px;
+    padding: 2%;
+    margin: 3%
+}
+
+h2 {
+    font-size: 25px;
+}

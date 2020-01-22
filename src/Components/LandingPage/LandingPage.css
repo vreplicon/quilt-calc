@@ -1,0 +1,12 @@
+.tagline {
+    font-style: italic;
+    text-align: center;
+}
+
+.grey-section {
+    background-color: gray;
+}
+
+.lightgrey-section {
+    background-color: lightgray;
+}

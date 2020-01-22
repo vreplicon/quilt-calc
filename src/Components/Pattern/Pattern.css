@@ -1,0 +1,11 @@
+.pattern-item {
+    border: 4px black solid;
+    border-radius: 5px;
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+}
+
+.pattern-item > * {
+    padding: 1%;
+}
