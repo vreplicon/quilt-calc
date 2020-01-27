@@ -1,14 +1,10 @@
 import React from "react";
-// import { Link } from "react-router-dom";
-// import AppContext from "../AppContext/AppContext";
-// import PatternResults from '../PatternResults/PatternResults'
-// import CustomizerPannel from '../CustomizerPannel/CustomizerPannel'
 import './QuiltDisplay.css'
 
 
 
 export default class QuiltDisplay extends React.Component {
-//   static contextType = AppContext;
+
 static defaultProps = {
     width: 0,
     height: 0,
@@ -21,11 +17,10 @@ static defaultProps = {
   render() {
 
     const pattern = this.props.pattern
-    const classes = pattern.className + ' quilt-block'
-
+    const classes = pattern.class_name + ' quilt-block'
     const borderWidth = (5 * this.props.border) + 'px'
-    const borderHeight = (5 * pattern.blockHeight) + 'px'
-    const borderRowWidth = (5 * (2 * this.props.border + pattern.blockWidth * this.props.width)) + 'px'
+    const borderHeight = (5 * pattern.blockheight) + 'px'
+    const borderRowWidth = (5 * (2 * this.props.border + pattern.blockwidth * this.props.width)) + 'px'
     const borderStyle = {
         width: borderWidth,
         height: borderHeight
@@ -35,8 +30,6 @@ static defaultProps = {
         height: borderWidth,
         width: borderRowWidth
     }
-
-    
 
 
       let row = []

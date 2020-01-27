@@ -1,10 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import AppContext from "../AppContext/AppContext";
 import './LandingPage.css'
 
 export default class LandingPage extends React.Component {
-//   static contextType = AppContext;
 
   render() {
     return (

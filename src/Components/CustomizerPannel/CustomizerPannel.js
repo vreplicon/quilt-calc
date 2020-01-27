@@ -1,13 +1,8 @@
 import React from "react";
-// import { Link } from "react-router-dom";
-// import AppContext from "../AppContext/AppContext";
 
 import './CustomizerPannel.css'
 
 export default class CustomizerPannel extends React.Component {
-//   static contextType = AppContext;
-
-
     static defaultProps = {
         setWidth: {},
         setHeight: {},

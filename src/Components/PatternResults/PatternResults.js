@@ -15,10 +15,10 @@ export default class PatternResults extends React.Component {
  }
 areaCalc = () => {
   const totBlocks = this.props.width * this.props.height;
-  const fabrics = this.props.pattern.fabricPerBlock
-  const neededFabric = Object.keys(fabrics).map(key => {
+  const fabrics = this.props.pattern.fabric
+  const neededFabric = fabrics.map(x => {
 
-    return {[key] : fabrics[key] * totBlocks}
+    return {[x.fabric_name] : x.amount * totBlocks}
   });
   return neededFabric
 }
@@ -40,8 +40,8 @@ areaCalc = () => {
   })
 
 
-    const quiltWidth = this.props.width * this.props.pattern.blockWidth
-    const quiltHeight = this.props.height * this.props.pattern.blockHeight
+    const quiltWidth = this.props.width * this.props.pattern.blockwidth
+    const quiltHeight = this.props.height * this.props.pattern.blockheight
     const widthWithBorder = quiltWidth + (2 * this.props.border) + ' in'
     const heightWithBorder = quiltHeight + (2 * this.props.border) + ' in'
     const borderArea = (2 * quiltWidth + 2 * quiltHeight) * this.props.border 

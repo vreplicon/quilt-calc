@@ -17,7 +17,7 @@ static defaultProps = {
 
     return (
       <div className="pattern-item">
-  <h3>{pattern.name}</h3>
+  <h3>{pattern.quilt_name}</h3>
           <em>[placeholder for pattern image]</em>
         <Link to="/pattern-customization"
             onClick={() => this.context.changeSelected(pattern)}>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Switch } from "react-router-dom";
-import {patterns} from './data'
+// import {patterns} from './data'
+import config from './config'
 import AppContext from "./Components/AppContext/AppContext";
 import LandingPage from './Components/LandingPage/LandingPage'
 import PatternSelect from './Components/PatternSelect/PatternSelect'
@@ -19,8 +20,38 @@ class App extends React.Component {
     };
   }
 
+
+  getPatterns(url, callback) {
+    const options = {
+      method: 'GET',
+      // body: null,
+      headers: {
+        "Content-Type": "application/json"
+      }
+    };
+    fetch(url, options)
+      .then(res => {
+        if (!res.ok) {
+
+          return res.json().then(error => {
+            throw error;
+          });
+        } else {
+          return res.json();
+        }
+      })
+      .then(data => {
+          callback(data);
+        }
+      )
+      .catch(error => {
+        console.error(error);
+      });
+  }
+
+
 componentDidMount() {
-  this.setPatterns(patterns)
+  this.getPatterns(`${config.API_ENDPOINT}/api/quilts`, this.setPatterns)
 }
 
 
