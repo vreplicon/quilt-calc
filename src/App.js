@@ -54,7 +54,6 @@ componentDidMount() {
   this.getPatterns(`${config.API_ENDPOINT}/api/quilts`, this.setPatterns)
 }
 
-
 setPatterns = patterns => {
     this.setState({ patterns });
 };

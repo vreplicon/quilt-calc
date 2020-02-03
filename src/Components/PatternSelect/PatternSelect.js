@@ -1,5 +1,5 @@
 import React from "react";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import AppContext from "../AppContext/AppContext";
 import Pattern from "../Pattern/Pattern"
 import './PatternSelect.css'
@@ -17,9 +17,12 @@ export default class PatternSelect extends React.Component {
     });
     return (
       <div className="patterns">
-      <header role="banner" className="banner">
-        <h1>Patterns</h1>
-      </header>
+        <header role="banner" className="banner">
+          <Link to="/">
+            <button>Go Back to Landing Page</button>
+          </Link>
+          <h1>Patterns</h1>
+        </header>
       
       <section className="patterns-section">
         <section className="patternHeader">

@@ -15,7 +15,7 @@ static defaultProps = {
 
 
   render() {
-
+    console.log(this.props)
     const pattern = this.props.pattern
     const classes = pattern.class_name + ' quilt-block'
     const borderWidth = (5 * this.props.border) + 'px'

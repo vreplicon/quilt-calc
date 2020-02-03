@@ -1,5 +1,5 @@
 import React from "react";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 // import AppContext from "../AppContext/AppContext";
 import PatternResults from '../PatternResults/PatternResults'
 import CustomizerPannel from '../CustomizerPannel/CustomizerPannel'
@@ -19,21 +19,39 @@ static defaultProps = {
     this.state = {
       width : this.props.pattern.width,
       height : this.props.pattern.height,
-      border : 0
+      border : 0,
+      displayWidth : this.props.pattern.width,
+      displayHeight : this.props.pattern.height
+
     };
   }
 
 
 setWidth = width => {
+  const numWidth = Number(width)
+  if (numWidth > 0 && Number.isInteger(numWidth)){
+    this.setState({displayWidth : width})
+  }
+
     this.setState({ width });
+
+
+  
   };
 
 setHeight = height => {
+    const numHeight = Number(height)
+      if (numHeight > 0 && Number.isInteger(numHeight)){
+          this.setState({displayHeight : height})
+      }
     this.setState({ height });
   };
 
 setBorder = border => {
-    this.setState({ border });
+  if (border >= 0){
+this.setState({ border });
+  }
+    
   };
 
 
@@ -44,14 +62,21 @@ setBorder = border => {
     let height = this.state.height
     let border = this.state.border
     let pattern = this.props.pattern
+    let displayWidth = this.state.displayWidth
+    let displayHeight = this.state.displayHeight
     return (
         <div className="pattern-customizer">
-        <h1>Pattern Customization</h1>
+        <header role="banner" className="banner">
+          <Link to="/pattern-select">
+            <button>Go Back</button>
+          </Link>
+          <h1>Patterns</h1>
+        </header>
         <div className="container">
         <CustomizerPannel width={width} height={height} setWidth={this.setWidth} setHeight={this.setHeight} setBorder={this.setBorder}/>
-        <PatternResults pattern={pattern} border={border} width={width} height={height}/>
+        <PatternResults pattern={pattern} border={border} width={displayWidth} height={displayHeight}/>
         </div>
-        <QuiltDisplay width={width} height={height} border={border} pattern={pattern}/>
+        <QuiltDisplay width={displayWidth} height={displayHeight} border={border} pattern={pattern}/>
         
         </div>
     );
