@@ -1,6 +1,5 @@
 .results {
     display: flex;
-    /* flex-direction: column; */
     border: 4px black solid;
     border-radius: 5px;
     padding: 2%;

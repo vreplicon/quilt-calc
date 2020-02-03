@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import AppContext from "../AppContext/AppContext";
 import PatternResults from '../PatternResults/PatternResults'
 import CustomizerPannel from '../CustomizerPannel/CustomizerPannel'
 import QuiltDisplay from '../QuiltDisplay/QuiltDisplay'
@@ -72,10 +71,10 @@ this.setState({ border });
           </Link>
           <h1>Patterns</h1>
         </header>
-        <div className="container">
+        <section className="input-results">
         <CustomizerPannel width={width} height={height} setWidth={this.setWidth} setHeight={this.setHeight} setBorder={this.setBorder}/>
         <PatternResults pattern={pattern} border={border} width={displayWidth} height={displayHeight}/>
-        </div>
+        </section>
         <QuiltDisplay width={displayWidth} height={displayHeight} border={border} pattern={pattern}/>
         
         </div>
