@@ -3,10 +3,29 @@
     text-align: center;
 }
 
-.grey-section {
-    background-color: gray;
+.landingBanner {
+    width: 50%;
+    background-color: var(--light-bg-color);
 }
 
-.lightgrey-section {
-    background-color: lightgray;
+
+h3 {
+    font-size: 25px;
+}
+
+.one {
+
+    text-align: left;
+}
+
+.three {
+    text-align: end;
+}
+
+.block-header {
+    display: inline-block;
+}
+
+.button-section > * {
+    padding: 1%;
 }

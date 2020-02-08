@@ -49,16 +49,22 @@ areaCalc = () => {
     return (
         <div className="results">   
           
+                    <h2>Finished Quilt Top Dimensions:</h2>
           <dl className="quilt-dimensions">
-          <h3>Finished Quilt Top Dimensions:</h3>
+          <div className="fabric-item">
           <dt>Width</dt>
             <dd>{widthWithBorder}</dd>
+            </div>
+            <div className="fabric-item">
           <dt>Height</dt>
           <dd>{heightWithBorder}</dd>
+          </div>
           </dl>
           
+
+           <h2>Fabric Needed:</h2>         
           <dl className="quilt-yardage">
-          <h3>Fabric Needed:</h3>
+
             {fabrics}
             <div className="fabric-item">
             <dt>Border Fabric</dt>

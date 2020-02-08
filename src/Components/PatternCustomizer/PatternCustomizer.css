@@ -8,8 +8,9 @@
 
 .customizer-pannel, .results {
     width: 80vw;
-    height: 35vh;
+    height: 50vh;
 }
+
 
 .pattern-customizer {
     display: flex;
@@ -23,7 +24,7 @@
     }
 
     .customizer-pannel, .results {
-        width: 35vw;
-        height: 45vh;
+        width: 40vw;
+        height: 75vh;
     }
   }

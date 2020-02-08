@@ -52,7 +52,7 @@ export default class CustomizerPannel extends React.Component {
         const numWidth = Number(width)
         
         if (width < 1 || !Number.isInteger(numWidth)) {
-          return "Must be an integer or 1 or more"
+          return "Must be an integer of 1 or more"
         }
       }
 
@@ -61,7 +61,7 @@ export default class CustomizerPannel extends React.Component {
         const numHeight = Number(height)
         
         if (height < 1 || !Number.isInteger(numHeight)) {
-          return "Must be an integer or 1 or more"
+          return "Must be an integer of 1 or more"
         }
       }
 

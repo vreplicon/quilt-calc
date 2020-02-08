@@ -1,12 +1,12 @@
 import React from 'react';
 import { Route, Switch } from "react-router-dom";
-// import {patterns} from './data'
 import config from './config'
 import AppContext from "./Components/AppContext/AppContext";
 import LandingPage from './Components/LandingPage/LandingPage'
 import PatternSelect from './Components/PatternSelect/PatternSelect'
 import PatternCustomizer from './Components/PatternCustomizer/PatternCustomizer'
 import './App.css'
+import './Variables.css'
 
 
 

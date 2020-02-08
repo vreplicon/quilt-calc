@@ -69,12 +69,13 @@ this.setState({ border });
           <Link to="/pattern-select">
             <button>Go Back</button>
           </Link>
-          <h1>Patterns</h1>
+          <h1>Customize Your Pattern</h1>
         </header>
         <section className="input-results">
         <CustomizerPannel width={width} height={height} setWidth={this.setWidth} setHeight={this.setHeight} setBorder={this.setBorder}/>
         <PatternResults pattern={pattern} border={border} width={displayWidth} height={displayHeight}/>
         </section>
+        <h1>Quilt Preview</h1>
         <QuiltDisplay width={displayWidth} height={displayHeight} border={border} pattern={pattern}/>
         
         </div>
