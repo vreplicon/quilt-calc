@@ -21,7 +21,6 @@ class App extends React.Component {
   getPatterns(url, callback) {
     const options = {
       method: "GET",
-      // body: null,
       headers: {
         "Content-Type": "application/json"
       }
