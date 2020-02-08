@@ -7,7 +7,7 @@ it("renders without crashing", () => {
   const div = document.createElement("div");
   ReactDOM.render(
 <BrowserRouter>
-  <PatternCustomizer />
+  <PatternCustomizer pattern={{fabric: []}}/>
 </BrowserRouter>,
 div
   );
