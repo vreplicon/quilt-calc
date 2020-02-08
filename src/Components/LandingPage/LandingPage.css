@@ -1,31 +1,29 @@
 .tagline {
-    font-style: italic;
-    text-align: center;
+  font-style: italic;
+  text-align: center;
 }
 
 .landingBanner {
-    width: 50%;
-    background-color: var(--light-bg-color);
+  width: 50%;
+  background-color: var(--light-bg-color);
 }
 
-
 h3 {
-    font-size: 25px;
+  font-size: 25px;
 }
 
 .one {
-
-    text-align: left;
+  text-align: left;
 }
 
 .three {
-    text-align: end;
+  text-align: end;
 }
 
 .block-header {
-    display: inline-block;
+  display: inline-block;
 }
 
 .button-section > * {
-    padding: 1%;
+  padding: 1%;
 }
