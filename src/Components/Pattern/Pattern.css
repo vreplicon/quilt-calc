@@ -1,17 +1,17 @@
 .pattern-item {
-    border: 4px var(--main-text-color) solid;
-    border-radius: 5px;
-    padding: 2%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: var(--light-bg-color);
+  border: 4px var(--main-text-color) solid;
+  border-radius: 5px;
+  padding: 2%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--light-bg-color);
 }
 
 .pattern-item > * {
-    padding: 1%;
+  padding: 1%;
 }
 
 img {
-    width: 20%;
+  width: 20%;
 }

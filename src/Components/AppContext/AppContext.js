@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
 const AppContext = React.createContext({
-    patterns: []
+  patterns: []
 });
 
 export default AppContext;

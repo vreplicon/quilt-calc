@@ -1,64 +1,64 @@
 html {
-    background-color: var(--main-bg-color);
-    padding-bottom: 4%;
+  background-color: var(--main-bg-color);
+  padding-bottom: 4%;
 }
 
 * {
+  box-sizing: border-box;
+  font-size: 20px;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
 
-    box-sizing: border-box;
-    font-size: 20px;
-    margin: 0;
-    font-family: 'Montserrat', sans-serif;
-    text-align: center;
+  color: var(--main-text-color);
+}
 
-    color: var(--main-text-color);
-  }
-
-  h1 {
-    font-size: 50px;
-    font-weight: normal;
-    text-align: center;
-    font-family: 'Caveat', cursive;
+h1 {
+  font-size: 50px;
+  font-weight: normal;
+  text-align: center;
+  font-family: "Caveat", cursive;
 }
 
 p {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 label {
-    display: block;
+  display: block;
 }
 
-section, .banner {    
-    width: 100%;
-    padding: 2%;
+section,
+.banner {
+  width: 100%;
+  padding: 2%;
 }
 
 ul {
-    list-style: none;
+  list-style: none;
 }
 
 button {
-    display: inline-block;
-    padding: 0.3em 1.2em;
-    margin: 0 0.1em 0.1em 0;
-    border: 0.16em solid var(--main-text-color);
-    border-radius: 2em;
-    box-sizing: border-box;
-    text-decoration: none;
-    font-weight: 300;
-    color: var(--main-text-color);
-    background-color: var(--light-bg-color);
-    text-shadow: 0 0.04em 0.04em rgba(0, 0, 0, 0.35);
-    text-align: center;
-    transition: all 0.2s;
+  display: inline-block;
+  padding: 0.3em 1.2em;
+  margin: 0 0.1em 0.1em 0;
+  border: 0.16em solid var(--main-text-color);
+  border-radius: 2em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-weight: 300;
+  color: var(--main-text-color);
+  background-color: var(--light-bg-color);
+  text-shadow: 0 0.04em 0.04em rgba(0, 0, 0, 0.35);
+  text-align: center;
+  transition: all 0.2s;
 }
 
 button:hover {
-    border-color: var(--off-white);
+  border-color: var(--off-white);
 }
 
 button:focus {
-    outline: none;
-    border-color: var(--main-bg-color);
+  outline: none;
+  border-color: var(--main-bg-color);
 }
