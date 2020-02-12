@@ -14,7 +14,8 @@ class App extends React.Component {
 
     this.state = {
       patterns: [],
-      selectedPattern: {}
+      selectedPattern: {},
+      newLookupId: ""
     };
   }
 
@@ -90,6 +91,10 @@ contactApi(action, url, callback = null, body = null) {
     this.setState({ selectedPattern: pattern });
   };
 
+  setNewLookupId = pattern => {
+    this.setState({newLookupId : pattern.lookup_id})
+  }
+
   setRetrivedPattern = pattern => {
     this.setState({selectedPattern: pattern})
     this.props.history.push("/pattern-customization");
@@ -105,12 +110,21 @@ contactApi(action, url, callback = null, body = null) {
 
   }
 
+  saveQuilt = pattern => {
+    this.contactApi(
+      "POST",
+      `${config.API_ENDPOINT}/api/quilts`,
+      this.setNewLookupId,
+      pattern
+    );
+  }
+
   render() {
     const contextValue = {
       patterns: this.state.patterns,
       selectedPattern: this.state.patterns,
       changeSelected: this.setSelectedPattern,
-      retrivedPattern: this.state.retrivedPattern,
+      newLookupId : this.state.newLookupId,
       getQuiltFromCode: this.getQuiltFromCode
     };
     return (
