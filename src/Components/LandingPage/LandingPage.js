@@ -1,8 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./LandingPage.css";
+import ValidationError from "../ValidationError/ValidationError"
+import AppContext from "../AppContext/AppContext"
 
 export default class LandingPage extends React.Component {
+  static contextType = AppContext;
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      quiltCode: "" 
+    };
+  }
+
+
   render() {
     return (
       <div className="landing-page">
@@ -39,6 +52,10 @@ export default class LandingPage extends React.Component {
           <Link to="/pattern-select">
             <button>Let's Get Quilting!</button>
           </Link>
+          <h2>Already have a code for a quilt? Enter it here</h2>
+          <input className="code-input" type="text" onChange={e => this.setState({quiltCode: e.target.value})}/>
+          <button onClick={() => this.context.getQuiltFromCode(this.state.quiltCode)}>Submit</button>
+          {<ValidationError message={null} />}
         </section>
       </div>
     );

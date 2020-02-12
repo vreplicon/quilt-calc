@@ -37,8 +37,8 @@ export default class PatternResults extends React.Component {
       );
     });
 
-    const quiltWidth = this.props.width * this.props.pattern.blockwidth;
-    const quiltHeight = this.props.height * this.props.pattern.blockheight;
+    const quiltWidth = this.props.width * this.props.pattern.block_width;
+    const quiltHeight = this.props.height * this.props.pattern.block_height;
     const widthWithBorder = quiltWidth + 2 * this.props.border + " in";
     const heightWithBorder = quiltHeight + 2 * this.props.border + " in";
     const borderArea = (2 * quiltWidth + 2 * quiltHeight) * this.props.border;

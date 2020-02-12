@@ -13,9 +13,9 @@ export default class QuiltDisplay extends React.Component {
     const pattern = this.props.pattern;
     const classes = pattern.class_name + " quilt-block";
     const borderWidth = 5 * this.props.border + "px";
-    const borderHeight = 5 * pattern.blockheight + "px";
+    const borderHeight = 5 * pattern.block_height + "px";
     const borderRowWidth =
-      5 * (2 * this.props.border + pattern.blockwidth * this.props.width) +
+      5 * (2 * this.props.border + pattern.block_width * this.props.width) +
       "px";
     const borderStyle = {
       width: borderWidth,

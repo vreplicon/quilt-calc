@@ -8,7 +8,8 @@ export default class CustomizerPannel extends React.Component {
     setHeight: {},
     setBorder: {},
     width: 1,
-    height: 1
+    height: 1,
+    border: 0
   };
 
   constructor(props) {
@@ -17,7 +18,7 @@ export default class CustomizerPannel extends React.Component {
     this.state = {
       width: { value: this.props.width, touched: false },
       height: { value: this.props.height, touched: false },
-      border: { value: 0, touched: false }
+      border: { value: this.props.border, touched: false }
     };
   }
 
@@ -107,7 +108,7 @@ export default class CustomizerPannel extends React.Component {
               type="number"
               min="0"
               name="border-size"
-              placeholder="0"
+              value={this.props.border}
               onChange={e => this.updateBorder(e.target.value)}
             />
             {this.state.border.touched && (

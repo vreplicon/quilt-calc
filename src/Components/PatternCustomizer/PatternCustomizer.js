@@ -16,7 +16,7 @@ export default class PatternCustomizer extends React.Component {
     this.state = {
       width: this.props.pattern.width,
       height: this.props.pattern.height,
-      border: 0,
+      border: this.props.pattern.border,
       displayWidth: this.props.pattern.width,
       displayHeight: this.props.pattern.height
     };
@@ -64,6 +64,7 @@ export default class PatternCustomizer extends React.Component {
           <CustomizerPannel
             width={width}
             height={height}
+            border={border}
             setWidth={this.setWidth}
             setHeight={this.setHeight}
             setBorder={this.setBorder}
