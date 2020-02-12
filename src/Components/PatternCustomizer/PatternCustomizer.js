@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import PatternResults from "../PatternResults/PatternResults";
 import CustomizerPannel from "../CustomizerPannel/CustomizerPannel";
 import QuiltDisplay from "../QuiltDisplay/QuiltDisplay";
+import QuiltSaver from "../QuiltSaver/QuiltSaver";
 import "./PatternCustomizer.css";
 
 export default class PatternCustomizer extends React.Component {
@@ -76,6 +77,7 @@ export default class PatternCustomizer extends React.Component {
             height={displayHeight}
           />
         </section>
+        <QuiltSaver pattern={{...pattern, width : displayWidth, height: displayHeight, border : border}}/>
         <h1>Quilt Preview</h1>
         <QuiltDisplay
           width={displayWidth}

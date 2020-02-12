@@ -125,7 +125,8 @@ contactApi(action, url, callback = null, body = null) {
       selectedPattern: this.state.patterns,
       changeSelected: this.setSelectedPattern,
       newLookupId : this.state.newLookupId,
-      getQuiltFromCode: this.getQuiltFromCode
+      getQuiltFromCode: this.getQuiltFromCode,
+      saveQuilt: this.saveQuilt
     };
     return (
       <AppContext.Provider value={contextValue}>
