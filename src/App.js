@@ -31,12 +31,11 @@ contactApi(action, url, callback = null, body = null) {
       .then(res => {
 
         if (res.status === 404) {
-          this.setState({retrivedPattern: null})
+          return res.json()
         }
-        else if (!res.ok) {
-
+         else if (!res.ok) {
+          
           return res.json().then(error => {
-
             throw error;
           });
         } else if (res.status !== 204) {
@@ -97,8 +96,9 @@ contactApi(action, url, callback = null, body = null) {
 
   setRetrivedPattern = pattern => {
     this.setState({selectedPattern: pattern})
+    if (pattern.id) {
     this.props.history.push("/pattern-customization");
-    
+    }
   };
 
   getQuiltFromCode = code => {

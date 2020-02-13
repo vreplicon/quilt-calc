@@ -61,6 +61,7 @@ export default class PatternCustomizer extends React.Component {
           </Link>
           <h1>Customize Your Pattern</h1>
         </header>
+        <QuiltSaver pattern={{...pattern, width : displayWidth, height: displayHeight, border : border}}/>
         <section className="input-results">
           <CustomizerPannel
             width={width}
@@ -77,7 +78,7 @@ export default class PatternCustomizer extends React.Component {
             height={displayHeight}
           />
         </section>
-        <QuiltSaver pattern={{...pattern, width : displayWidth, height: displayHeight, border : border}}/>
+        
         <h1>Quilt Preview</h1>
         <QuiltDisplay
           width={displayWidth}
