@@ -24,7 +24,7 @@ constructor(props) {
         if (this.props.pattern.id) delete this.props.pattern.id
         const newId = uuid.v4()
         this.setState({lookupId : newId})
-        this.context.saveQuilt({...this.props.pattern, lookup_id : newId})
+        this.context.saveQuilt({...this.props.pattern, lookup_id : newId, standard_pattern: false})
     }
 
 
