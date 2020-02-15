@@ -1,6 +1,7 @@
 import React from "react";
 import uuid from "uuid";
 import AppContext from "../AppContext/AppContext";
+import "./QuiltSaver.css"
 
 
 export default class QuiltSaver extends React.Component {
@@ -35,7 +36,7 @@ constructor(props) {
       <div className="quilt-saver">
         <h3>Want to save your pattern for later?</h3>
         <button onClick={() => this.saveQuilt()}>Save</button>
-        {lookupId ? <p>Use code {lookupId} on landing page to access this pattern</p> : null}
+        {lookupId ? <p>Use code <b>{lookupId}</b> on landing page to access this pattern</p> : null}
       </div>
     );
   }
