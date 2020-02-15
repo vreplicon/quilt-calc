@@ -15,7 +15,8 @@ class App extends React.Component {
     this.state = {
       patterns: [],
       selectedPattern: {},
-      newLookupId: ""
+      newLookupId: "",
+      quiltError: null
     };
   }
 
@@ -34,6 +35,37 @@ contactApi(action, url, callback = null, body = null) {
           return res.json()
         }
          else if (!res.ok) {
+          
+          return res.json().then(error => {
+            throw error;
+          });
+        } else if (res.status !== 204) {
+          return res.json();
+        }
+      })
+      .then(data => {
+
+        if (callback) {
+          callback(data);
+        }
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  }
+
+getQuilt(url, callback = null, body = null) {
+    const options = {
+      method: 'GET',
+      body: body ? JSON.stringify(body) : null,
+      headers: {
+        "Content-Type": "application/json"
+      }
+    };
+    fetch(url, options)
+      .then(res => {
+        console.log(res.status !== 404)
+         if (!res.ok && res.status !== 404) {
           
           return res.json().then(error => {
             throw error;
@@ -95,16 +127,19 @@ contactApi(action, url, callback = null, body = null) {
   }
 
   setRetrivedPattern = pattern => {
+    if (pattern) {
     this.setState({selectedPattern: pattern})
     if (pattern.id) {
-    this.props.history.push("/pattern-customization");
+      this.setState({quiltError: null})
+      this.props.history.push("/pattern-customization");
+    }
+    } else {
+      this.setState({quiltError: "No quilt found for given code."})
     }
   };
 
   getQuiltFromCode = code => {
-      this.contactApi(
-      "GET",
-      `${config.API_ENDPOINT}/api/quilts/${code}`,
+      this.getQuilt(`${config.API_ENDPOINT}/api/quilts/${code}`,
       this.setRetrivedPattern
     );
 
@@ -126,7 +161,8 @@ contactApi(action, url, callback = null, body = null) {
       changeSelected: this.setSelectedPattern,
       newLookupId : this.state.newLookupId,
       getQuiltFromCode: this.getQuiltFromCode,
-      saveQuilt: this.saveQuilt
+      saveQuilt: this.saveQuilt,
+      quiltError: this.state.quiltError
     };
     return (
       <AppContext.Provider value={contextValue}>

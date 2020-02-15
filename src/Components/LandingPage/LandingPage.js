@@ -55,8 +55,9 @@ export default class LandingPage extends React.Component {
           <section className="code-access">
           <h2>Already have a code for a quilt? Enter it here</h2>
           <input className="code-input" type="text" onChange={e => this.setState({quiltCode: e.target.value})}/>
+          {<ValidationError message={this.context.quiltError} />}
           <button className="code-submit" onClick={() => this.context.getQuiltFromCode(this.state.quiltCode)}>Submit</button>
-          {<ValidationError message={null} />}
+          
         </section>
         </section>
       </div>
