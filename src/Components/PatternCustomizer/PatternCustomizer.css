@@ -5,7 +5,12 @@
   justify-content: space-evenly;
 }
 
-.customizer-pannel,
+.customizer-pannel {
+  width: 80vw;
+  height: 60vh;
+}
+
+
 .results {
   width: 80vw;
   height: 50vh;

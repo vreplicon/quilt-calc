@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import AppContext from "../AppContext/AppContext";
 import Pattern from "../Pattern/Pattern";
+import './PatternSelect.css'
 
 export default class PatternSelect extends React.Component {
   static contextType = AppContext;
