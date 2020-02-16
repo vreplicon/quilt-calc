@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./LandingPage.css";
-import ValidationError from "../ValidationError/ValidationError"
-import AppContext from "../AppContext/AppContext"
+import ValidationError from "../ValidationError/ValidationError";
+import AppContext from "../AppContext/AppContext";
 
 export default class LandingPage extends React.Component {
   static contextType = AppContext;
@@ -11,10 +11,9 @@ export default class LandingPage extends React.Component {
     super(props);
 
     this.state = {
-      quiltCode: "" 
+      quiltCode: ""
     };
   }
-
 
   render() {
     return (
@@ -53,12 +52,22 @@ export default class LandingPage extends React.Component {
             <button className="next-button">Let's Get Quilting!</button>
           </Link>
           <section className="code-access">
-          <h2>Already have a code for a quilt? Enter it here</h2>
-          <input className="code-input" type="text" onChange={e => this.setState({quiltCode: e.target.value})}/>
-          {<ValidationError message={this.context.quiltError} />}
-          <button className="code-submit" onClick={() => this.context.getQuiltFromCode(this.state.quiltCode)}>Submit</button>
-          
-        </section>
+            <h2>Already have a code for a quilt? Enter it here</h2>
+            <input
+              className="code-input"
+              type="text"
+              onChange={e => this.setState({ quiltCode: e.target.value })}
+            />
+            {<ValidationError message={this.context.quiltError} />}
+            <button
+              className="code-submit"
+              onClick={() =>
+                this.context.getQuiltFromCode(this.state.quiltCode)
+              }
+            >
+              Submit
+            </button>
+          </section>
         </section>
       </div>
     );

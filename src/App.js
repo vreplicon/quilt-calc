@@ -20,7 +20,7 @@ class App extends React.Component {
     };
   }
 
-contactApi(action, url, callback = null, body = null) {
+  contactApi(action, url, callback = null, body = null) {
     const options = {
       method: action,
       body: body ? JSON.stringify(body) : null,
@@ -30,12 +30,9 @@ contactApi(action, url, callback = null, body = null) {
     };
     fetch(url, options)
       .then(res => {
-
         if (res.status === 404) {
-          return res.json()
-        }
-         else if (!res.ok) {
-          
+          return res.json();
+        } else if (!res.ok) {
           return res.json().then(error => {
             throw error;
           });
@@ -44,7 +41,6 @@ contactApi(action, url, callback = null, body = null) {
         }
       })
       .then(data => {
-
         if (callback) {
           callback(data);
         }
@@ -54,9 +50,9 @@ contactApi(action, url, callback = null, body = null) {
       });
   }
 
-getQuilt(url, callback = null, body = null) {
+  getQuilt(url, callback = null, body = null) {
     const options = {
-      method: 'GET',
+      method: "GET",
       body: body ? JSON.stringify(body) : null,
       headers: {
         "Content-Type": "application/json"
@@ -64,9 +60,8 @@ getQuilt(url, callback = null, body = null) {
     };
     fetch(url, options)
       .then(res => {
-        console.log(res.status !== 404)
-         if (!res.ok && res.status !== 404) {
-          
+        console.log(res.status !== 404);
+        if (!res.ok && res.status !== 404) {
           return res.json().then(error => {
             throw error;
           });
@@ -75,7 +70,6 @@ getQuilt(url, callback = null, body = null) {
         }
       })
       .then(data => {
-
         if (callback) {
           callback(data);
         }
@@ -123,27 +117,27 @@ getQuilt(url, callback = null, body = null) {
   };
 
   setNewLookupId = pattern => {
-    this.setState({newLookupId : pattern.lookup_id})
-  }
+    this.setState({ newLookupId: pattern.lookup_id });
+  };
 
   setRetrivedPattern = pattern => {
     if (pattern) {
-    this.setState({selectedPattern: pattern})
-    if (pattern.id) {
-      this.setState({quiltError: null})
-      this.props.history.push("/pattern-customization");
-    }
+      this.setState({ selectedPattern: pattern });
+      if (pattern.id) {
+        this.setState({ quiltError: null });
+        this.props.history.push("/pattern-customization");
+      }
     } else {
-      this.setState({quiltError: "No quilt found for given code."})
+      this.setState({ quiltError: "No quilt found for given code." });
     }
   };
 
   getQuiltFromCode = code => {
-      this.getQuilt(`${config.API_ENDPOINT}/api/quilts/${code}`,
+    this.getQuilt(
+      `${config.API_ENDPOINT}/api/quilts/${code}`,
       this.setRetrivedPattern
     );
-
-  }
+  };
 
   saveQuilt = pattern => {
     this.contactApi(
@@ -152,14 +146,14 @@ getQuilt(url, callback = null, body = null) {
       this.setNewLookupId,
       pattern
     );
-  }
+  };
 
   render() {
     const contextValue = {
       patterns: this.state.patterns,
       selectedPattern: this.state.patterns,
       changeSelected: this.setSelectedPattern,
-      newLookupId : this.state.newLookupId,
+      newLookupId: this.state.newLookupId,
       getQuiltFromCode: this.getQuiltFromCode,
       saveQuilt: this.saveQuilt,
       quiltError: this.state.quiltError

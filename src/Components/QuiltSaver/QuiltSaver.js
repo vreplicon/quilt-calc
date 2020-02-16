@@ -1,8 +1,7 @@
 import React from "react";
 import uuid from "uuid";
 import AppContext from "../AppContext/AppContext";
-import "./QuiltSaver.css"
-
+import "./QuiltSaver.css";
 
 export default class QuiltSaver extends React.Component {
   static contextType = AppContext;
@@ -11,23 +10,24 @@ export default class QuiltSaver extends React.Component {
     pattern: {}
   };
 
-constructor(props) {
+  constructor(props) {
     super(props);
 
     this.state = {
-      lookupId : null
+      lookupId: null
     };
   }
 
-
-
-    saveQuilt() {
-        if (this.props.pattern.id) delete this.props.pattern.id
-        const newId = uuid.v4()
-        this.setState({lookupId : newId})
-        this.context.saveQuilt({...this.props.pattern, lookup_id : newId, standard_pattern: false})
-    }
-
+  saveQuilt() {
+    if (this.props.pattern.id) delete this.props.pattern.id;
+    const newId = uuid.v4();
+    this.setState({ lookupId: newId });
+    this.context.saveQuilt({
+      ...this.props.pattern,
+      lookup_id: newId,
+      standard_pattern: false
+    });
+  }
 
   render() {
     let lookupId = this.state.lookupId;
@@ -36,7 +36,11 @@ constructor(props) {
       <div className="quilt-saver">
         <h3>Want to save your pattern for later?</h3>
         <button onClick={() => this.saveQuilt()}>Save</button>
-        {lookupId ? <p>Use code <b>{lookupId}</b> on landing page to access this pattern</p> : null}
+        {lookupId ? (
+          <p>
+            Use code <b>{lookupId}</b> on landing page to access this pattern
+          </p>
+        ) : null}
       </div>
     );
   }

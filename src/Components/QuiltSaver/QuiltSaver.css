@@ -1,14 +1,15 @@
 .quilt-saver {
-    border: 4px solid var(--main-text-color);
-    border-radius: 5px;
-    background-color: var(--light-bg-color);
-    padding: 2%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 80%;
+  border: 4px solid var(--main-text-color);
+  border-radius: 5px;
+  background-color: var(--light-bg-color);
+  padding: 2%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
 }
 
-.quilt-saver > h3, p {
-    padding: 2%;
+.quilt-saver > h3,
+p {
+  padding: 2%;
 }
