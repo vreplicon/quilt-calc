@@ -60,7 +60,6 @@ class App extends React.Component {
     };
     fetch(url, options)
       .then(res => {
-        console.log(res.status !== 404);
         if (!res.ok && res.status !== 404) {
           return res.json().then(error => {
             throw error;
